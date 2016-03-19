@@ -1,0 +1,58 @@
+!!! 5
+html
+	head
+		meta(charset="utf-8")
+		title #{title}
+		link(rel='stylesheet', href='/stylesheets/style.css')
+	body
+		h1 Formulaire Medical
+		div
+			form(action='/creerDossier' method='POST')
+				label(for='nom') nom: 
+				input(type='text', name='nom', id='nom', placeholder='Tapez le nom')
+				label(for='prenom') prenom: 
+				input(type='text', name='prenom', id='prenom', placeholder='Tapez le prenom')
+				p
+					span Veuillez indiquer votre sexe:
+					label(for='M')  M: 
+					input(type='radio', name='sexe', id='M', value='M')
+					label(for='F') F: 
+					input(type='radio', name='sexe', id='F', value='F')
+				br
+				p
+					span Date de Naissance:
+					label(for='JourDeNaissance')  jour : 
+					input(type='text', name='jourDeNaissance', id='JourDeNaissance', placeholder='4') 
+					label(for='moisNaissance')  mois : 
+					input(type='text', name='moisNaissance', id='moisNaissance', placeholder='11')
+					label(for='anneeNaissance')  annee : 
+					input(type='text', name='anneeNaissance', id='anneeNaissance', placeholder='2013')
+				br
+				label(for='assuranceMaladie')  Numero d'assurance maladie : 
+				input(type='text', name='assuranceMaladie', id='assuranceMaladie', placeholder='3215355312')
+				br
+				label(for='numeroDeTelephone')  Numero de téléphone : 
+				input(type='text', name='numeroDeTelephone', id='numeroDeTelephone', placeholder='514-555-5555')
+				br
+				label(for='adresse') Adresse : 
+				textarea(name='adresse' id='adresse')
+				div
+					h3 Antécedant Medicaux
+					label(for='decriptionMedical') Description : 
+					textarea(name='decriptionMedical' id='decriptionMedical')
+					br
+					label(for='JourAntecedant')  jour : 
+					input(type='text', name='jourAntecedant', id='JourAntecedant', placeholder='20') 
+					label(for='moisAntecedant')  mois : 
+					input(type='text', name='moisAntecedant', id='moisAntecedant', placeholder='11')
+					label(for='anneeAntecedant')  annee : 
+					input(type='text', name='anneeAntecedant', id='anneeAntecedant', placeholder='2013')
+				input(type='submit', name='submitDosierMedical', id='submitDosierMedical', value='Créer le Dossier')
+				input(type='reset', name='resetDossierMedical', id='resetDossierMedical', value='réinitialiser le formulaire')
+
+
+
+
+
+
+

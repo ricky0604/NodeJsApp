@@ -1,0 +1,27 @@
+!!! 5
+html
+	meta(charset='utf-8')
+	title Blog
+	link(rel='stylesheet', href='/stylesheets/style.css')
+	script(src='/javascripts/formulaire.js')
+	body
+		h1 Publier un article
+		nav
+			p#home
+				a(href='/') home
+			p#error
+		form(method='POST' onsubmit='return verification()' action='/admin/creer')
+			div
+				p id:
+				input(type='text',id='id',name='id')
+			div
+				p Titre:
+				input(type='text',id='titre',name='titre')
+			div
+				p Auteur: 
+				input(type='text', id='auteur', name='auteur')
+			div
+				p Texte: 
+				textarea(id='texte',name='texte',class='area')
+			div
+				input(type='submit',value='publier')

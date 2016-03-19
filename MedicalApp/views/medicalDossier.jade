@@ -1,0 +1,59 @@
+!!! 5
+head
+	meta(charset='utf-8')
+	title dossier medical
+	link(rel='stylesheet', href='/stylesheets/style.css')
+body
+	h1 Dossier Medical
+	table
+		thead
+			tr
+				th numéro de dossier
+				th nom
+				th prénom
+				th sexe
+				th Date de naissance
+				th Date d'ouverture 
+				th Date de fermeture
+				th Numéro d'assurance maladie
+				th Numéro de téléphone
+				th Adresse
+		tbody
+			tr
+				td #{numeroDossier}
+				td #{nom}
+				td #{prenom}
+				td #{sexe}
+				td #{dateNaissance}
+				td #{dateOuverture}
+				td #{dateFermeture}
+				td #{numeroAssuranceMaladie}
+				td #{numeroTelephone}
+				td #{adresse}
+	table
+		thead
+			tr
+				th Antecedant medicaux
+				th Notes au dossier
+				th Visites du patient
+				th Listes de suivis
+		tbody
+			tr
+				td
+					ul
+						each antecedant in listAntecedant 
+							li description: #{antecedant.description} date: #{antecedant.date}
+				td
+					ul
+						each note in listNotes
+							li description:  #{note.description} date: #{note.date}
+				td
+					ul
+						each visite in listVisites
+							li compte rendu:  #{visite.compteRendu} date: #{visite.date}
+				td
+					ul
+						each suivi in listDeSuivis
+							li date D'activation #{suivi.dateDactivation} description: #{suivi.description}
+
+

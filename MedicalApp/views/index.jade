@@ -1,0 +1,17 @@
+!!! 5
+html
+	meta(charset='utf-8')
+	title La liste des patients de la clinique
+	link(rel='stylesheet', href='/stylesheets/style.css')
+	body
+		h1 La liste des patients de la clinique
+		div
+			ol
+				each patient in listPatient
+					li 
+						p 
+							span(class='strongWord') noDossier: #{patient.numeroDossier} 
+						a(href='/#{patient.numeroDossier}') #{patient.nom} #{patient.prenom}
+						p visite : #{patient.dateVisite} 
+				
+

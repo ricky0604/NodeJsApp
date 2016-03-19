@@ -1,0 +1,15 @@
+!!!
+html
+  head
+    title Liste des albums
+    meta(charset="utf-8")
+    link(rel="stylesheet", href="/stylesheets/style.css")
+  body
+    nav
+      a(href='/') home | 
+      a(href='admin/#{_id}') modifier l'article
+    h1 #{titre}
+    p publier le #{date} 
+    p par #{auteur}
+    div
+      div !{texte}

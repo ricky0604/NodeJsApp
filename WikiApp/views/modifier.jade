@@ -1,0 +1,30 @@
+!!! 5
+html
+	meta(charset='utf-8')
+	title Blog
+	link(rel='stylesheet', href='/stylesheets/style.css')
+	script(src='/javascripts/modifierArticle.js')
+	body#page
+		h1#pageTitre Modifier l'article: #{_id}
+		p#home
+			a(href='/') home
+		p#consulter
+			a(href='/#{_id}') consulter
+		div#article
+			div
+				p Titre:
+				input(type='text',id='titre',name='titre',value='#{titre}')
+				input(type='button',id='modTitre', name='modTitre',value="valider la modification du titre", onclick="verificationChampTitre()")
+				p#messageTitre
+			div
+				p Auteur: 
+				input(type='text', id='auteur', name='auteur',value='#{auteur}')
+				input(type='button',id='modAuteur', name='modAuteur',value="valider la modification de l'auteur",onclick="verificationChampAuteur()")
+				p#messageAuteur
+			div
+				p Texte: 
+				textarea(id='texte',name='texte',class='area') #{texte}
+				input(type='button',id='modTexte', name='modTexte',value="valider la modification du texte",onclick="verificationChampTexte()")
+				p#messageTexte
+		input(type='button',id='supprimer',name='supprimer',value="supprimer l'article",onclick="deletePost()")
+		p#messageDelete

@@ -1,0 +1,30 @@
+!!!
+html
+  head
+    title Liste des albums
+    meta(charset="utf-8")
+    link(rel="stylesheet", href="/stylesheets/style.css")
+  body
+    h1 Page Principal du Blog
+    nav
+      a(href='admin/publier') publier un article
+    div.jwl_one_half 
+      h2 Liste des Articles
+      if listAll.length === 0
+        p Aucun article
+      else
+        ul
+          each postAll in listAll
+            li 
+              a(href='/#{postAll._id}') #{postAll.titre}
+    div.jwl_one_half.last
+      h2 Les 3 articles les plus récents
+      if listThree.length === 0
+        p Aucun arcticle
+      else
+        div
+          each postThree in listThree
+            div.article1 publié le #{postThree.date}   par #{postThree.auteur}
+            div.article2 
+              h3 #{postThree.titre}
+            div.article3 !{postThree.texte}
